@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import { ProjectCard, type Project } from "./ProjectCard";
 import { FilterProgrammer } from "./FilterProgrammer";
+import { ContactForm } from "./ContactForm";
 import { ThemeToggle } from "./ThemeToggle";
 import { Code2, Mail, MapPin, Calendar, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -324,6 +325,46 @@ export function Morphofolio({ projects = mockProjects }: MorphofolioProps) {
           </div>
         </div>
       </div>
+
+      {/* Contact Section */}
+      <section className="relative py-20 px-6 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(120,119,198,0.1),transparent_50%)]" />
+        
+        {/* Programming Stamps */}
+        <div className="absolute top-10 left-10 p-2 bg-gradient-to-br from-primary/15 to-primary/5 rounded-lg rotate-12 animate-pulse">
+          <Code2 className="h-4 w-4 text-primary/40" />
+        </div>
+        <div
+          className="absolute top-20 right-16 p-3 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl -rotate-6 animate-pulse"
+          style={{ animationDelay: "1.5s" }}
+        >
+          <Code2 className="h-5 w-5 text-primary/50" />
+        </div>
+        <div
+          className="absolute bottom-10 left-1/4 p-2 bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg rotate-45 animate-pulse"
+          style={{ animationDelay: "2s" }}
+        >
+          <Code2 className="h-3 w-3 text-primary/30" />
+        </div>
+
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="w-1 h-8 bg-gradient-to-b from-primary to-primary/60 rounded-full"></div>
+              <h2 className="text-4xl font-bold bg-gradient-to-r from-primary via-foreground to-foreground/70 bg-clip-text text-transparent">
+                Let's Work Together
+              </h2>
+            </div>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Have a project in mind? I'd love to hear about it. Send me a message and let's discuss how we can bring your ideas to life.
+            </p>
+          </div>
+          
+          <ContactForm />
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className="relative mt-20 overflow-hidden">
